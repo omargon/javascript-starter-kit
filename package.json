@@ -1,14 +1,14 @@
 {
-  "name": "javascript-development-environment",
+  "name": "javascript-starter-kit",
   "version": "1.0.0",
-  "description": "JavaScript development environment Pluralsight course by Cory House",
+  "description": "A simple clean Javascript starter kit to accelerated the development process",
   "scripts": {
     "prestart": "node build_scripts/startMessage.js",
     "start": "node build_scripts/srcServer.js",
     "security-check": "nsp check",
     "share": "lt --port 3000"
   },
-  "author": "Cory House",
+  "author": "Omar Gonzalez",
   "license": "MIT",
   "dependencies": {
     "whatwg-fetch": "1.0.0"
