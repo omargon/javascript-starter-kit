@@ -4,11 +4,15 @@
   "description": "A simple clean Javascript starter kit to accelerated the development process",
   "scripts": {
     "prestart": "babel-node build_scripts/startMessage.js",
-    "start": "npm-run-all --parallel security-check open:src",
+    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch",
     "open:src": "babel-node build_scripts/srcServer.js",
+    "lint": "esw webpack.config.* src buildScripts --color",
+    "lint:watch": "npm run lint -- --watch",
     "security-check": "nsp check",
     "localtunnel": "lt --port 3000",
-    "share": "npm-run-all --parallel open:src localtunnel"
+    "share": "npm-run-all --parallel open:src localtunnel",
+    "test": "mocha --reporter progress build_scripts/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
   },
   "author": "Omar Gonzalez",
   "license": "MIT",
